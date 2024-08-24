@@ -9,10 +9,18 @@
 
   <main id="down">
     <div class="left">
-      <li v-for="item in chartData.labels" :key="item">
-        {{ item }} -
-        {{ chartData.datasets[0].data[chartData.labels.indexOf(item)] }}
-      </li>
+      <table>
+        <tr>
+          <th>Название</th>
+          <th>Количесто</th>
+        </tr>
+        <tr v-for="item in chartData.labels" :key="item">
+          <th>{{ item }}</th>
+          <th>
+            {{ chartData.datasets[0].data[chartData.labels.indexOf(item)] }}
+          </th>
+        </tr>
+      </table>
     </div>
     <div class="right">
       <Pie
@@ -141,7 +149,7 @@ a {
 #down {
   margin-top: auto;
   height: 100vh;
-  border-top: 1px solid #f00;
+  border-top: 1px solid #000;
   display: flex;
   flex-direction: row;
 
@@ -176,5 +184,10 @@ a {
     font-size: 14px;
     margin-top: 10px;
   }
+}
+table,
+th,
+td {
+  border: 1px solid black;
 }
 </style>
