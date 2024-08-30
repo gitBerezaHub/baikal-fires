@@ -10,16 +10,9 @@
   <main id="pieChart">
     <div class="left">
       <h1>Выбор городов</h1>
-      <select v-model="selectedCities" multiple>
-        <option v-for="city in allCities" :key="city" :value="city">
-          {{ city }}
-        </option>
-      </select>
-      <p v-if="!selectedCities.length">Показаны все города</p>
-      <p v-else>Показаны города: {{ selectedCities.toString() }}</p>
     </div>
     <div class="right">
-      <PieChart :chartData="chartData" :selectedCities="selectedCities" />
+      <PieChart :chartData="chartData" />
     </div>
   </main>
 </template>
@@ -30,14 +23,6 @@ import { chartDataHardCode } from "@/data/chartData";
 import { onMounted, ref } from "vue";
 
 let chartData = chartDataHardCode;
-const allCities = ref([]);
-const selectedCities = ref([]);
-
-onMounted(() => {
-  for (let i = 0; i < chartData.length; i++) {
-    allCities.value.push(chartData[i].name);
-  }
-});
 </script>
 
 <style lang="scss">
