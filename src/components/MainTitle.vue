@@ -6,7 +6,7 @@
       Бизнес Метрики <br />
       Пожары на Байкале
     </h1>
-    <a href="#cityChoice" class="show-statistic">Посмотреть статистику</a>
+    <a href="#city-choice" class="show-statistic">Посмотреть статистику</a>
   </div>
 </template>
 

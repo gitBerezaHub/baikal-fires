@@ -16,10 +16,16 @@ const chartData = reactive({
   labels: [],
   datasets: [
     {
-      backgroundColor: [],
       data: [],
+      backgroundColor: ["#FF464F", "#FF8A34", "#FFBC25", "#25C685"],
     },
   ],
+});
+
+const chartOptions = reactive({
+  responsive: true,
+  maintainAspectRatio: true,
+  legend: { display: false },
 });
 
 const fillChart = () => {
@@ -38,6 +44,7 @@ onMounted(() => {
     @click="() => console.log(1)"
     id="pie-id"
     :data="chartData"
+    :options="chartOptions"
     v-if="chartData.datasets[0].data.length > 0"
   />
 </template>

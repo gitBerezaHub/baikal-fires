@@ -40,10 +40,14 @@ const addOrRemoveCity = (city: string) => {
         {{ city }}
       </button>
     </div>
-    <div class="footer" :class="!chosenCities.length && 'disabled-footer'">
+    <a
+      class="footer"
+      :class="!chosenCities.length && 'disabled-footer'"
+      :href="chosenCities.length ? '#chart-page' : '#city-choice'"
+    >
       <button class="footer-button">Посмотреть</button>
       <img src="../styles/down-arrow.svg" alt="" width="60" />
-    </div>
+    </a>
   </div>
 </template>
 
@@ -109,6 +113,7 @@ const addOrRemoveCity = (city: string) => {
     padding: 10px 40px;
     transition: all 0.2s ease;
     cursor: pointer;
+    text-decoration: none;
 
     .footer-button {
       background-color: transparent;

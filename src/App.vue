@@ -1,6 +1,7 @@
 <template>
-  <MainTitle></MainTitle>
-  <CityChoice id="cityChoice" :cityNameList="cityNameList" />
+  <MainTitle />
+  <CityChoice id="city-choice" :cityNameList="cityNameList" />
+  <ChartPage id="chart-page" :chart-data="chartData" />
 </template>
 
 <script lang="ts" setup>
@@ -8,6 +9,7 @@ import { chartDataHardCode } from "@/data/chartData";
 import CityChoice from "@/components/CityChoice.vue";
 import MainTitle from "@/components/MainTitle.vue";
 import { onMounted, ref } from "vue";
+import ChartPage from "@/components/ChartPage.vue";
 
 let chartData = chartDataHardCode;
 const cityNameList = ref([]);
