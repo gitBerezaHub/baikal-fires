@@ -42,7 +42,7 @@ const addOrRemoveCity = (city: string) => {
     </div>
     <div class="footer" :class="!chosenCities.length && 'disabled-footer'">
       <button class="footer-button">Посмотреть</button>
-      <img src="@/styles/down-arrow2.svg" alt="" width="60" />
+      <img src="../styles/down-arrow.svg" alt="" width="60" />
     </div>
   </div>
 </template>
